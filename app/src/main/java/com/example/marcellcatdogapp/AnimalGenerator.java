@@ -98,6 +98,8 @@ public class AnimalGenerator extends AppCompatActivity {
 
     private void generateAnimalImage(){
 
+        // This is not working
+
         if(!runCurrentAnimalChecker()){
             return;
         }
