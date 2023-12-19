@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ import com.example.marcellcatdogapp.Entity.Image.DogImageAPI;
 import com.example.marcellcatdogapp.databinding.ActivityGeneratorBinding;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -212,7 +214,8 @@ public class AnimalGenerator extends AppCompatActivity {
 //        Be careful, we're copying from cat...
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://dogapi.dog")
+//                .baseUrl("https://dogapi.dog")
+                .baseUrl("https://dog-api.kinduff.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -222,14 +225,12 @@ public class AnimalGenerator extends AppCompatActivity {
             @Override
             public void onResponse(Call<DogFact> call, Response<DogFact> response) {
                 if (response.isSuccessful()) {
-                    String text = response.body().getText();
-
-
-
-
-
-                        animalFactText.setText(text);
-//                    }
+                    ArrayList<String> text = response.body().getText();
+                    String anotherText = response.message().toString();
+//                    String yetanothertext = response.raw().body().toString();
+//                    String againText = response.body().toString();
+//                    Log.e("RANDOM_FACT", text);
+                    animalFactText.setText(text.get(0));
                 }
             }
 
