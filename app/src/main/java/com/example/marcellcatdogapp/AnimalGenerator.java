@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.marcellcatdogapp.Entity.AnimalImage;
+import com.example.marcellcatdogapp.Entity.AnimalImageAPI;
 import com.example.marcellcatdogapp.Entity.AnimalKey;
 import com.example.marcellcatdogapp.Entity.CatFact;
 import com.example.marcellcatdogapp.Entity.CatFactAPI;
@@ -94,13 +96,14 @@ public class AnimalGenerator extends AppCompatActivity {
 
     }
 
-    private void generateAnimalFact(){
+    private void generateAnimalImage(){
 
         if(!runCurrentAnimalChecker()){
             return;
         }
 
         String theBaseURL = "";
+        Class<AnimalImageAPI> futureAnimalImageAPI;
 
         if(currentAnimal.equals(AnimalKey.CAT.name())){
             theBaseURL = "https://api.thecatapi.com";
@@ -116,6 +119,10 @@ public class AnimalGenerator extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 //        Half done - you realized you'll need to reformat the entire interface and class structure.
+
+//        AnimalImageAPI animalImageAPI = retrofit.create()
+
+
     }
 
     private void generateCatImage() {

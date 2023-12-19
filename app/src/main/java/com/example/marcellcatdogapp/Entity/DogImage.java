@@ -2,7 +2,7 @@ package com.example.marcellcatdogapp.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DogImage {
+public class DogImage implements AnimalImage {
 
     @SerializedName("url")
     private String url;
