@@ -211,7 +211,7 @@ public class AnimalGenerator extends AppCompatActivity {
 //        Be careful, we're copying from cat...
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://cat-fact.herokuapp.com")
+                .baseUrl("https://dogapi.dog/api")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
