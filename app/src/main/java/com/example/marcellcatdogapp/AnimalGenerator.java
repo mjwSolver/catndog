@@ -80,7 +80,6 @@ public class AnimalGenerator extends AppCompatActivity {
 
     }
 
-
     private boolean runCurrentAnimalChecker(){
 
         if(currentAnimal == null){
