@@ -1,6 +1,6 @@
-package com.example.marcellcatdogapp.Entity;
+package com.example.marcellcatdogapp.Entity.Image;
 
-import com.example.marcellcatdogapp.Entity.CatImage;
+import com.example.marcellcatdogapp.Entity.AnimalImageAPI;
 
 import java.util.List;
 

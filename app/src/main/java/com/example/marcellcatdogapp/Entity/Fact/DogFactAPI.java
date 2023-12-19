@@ -1,6 +1,6 @@
-package com.example.marcellcatdogapp.Entity;
+package com.example.marcellcatdogapp.Entity.Fact;
 
-import java.util.List;
+import com.example.marcellcatdogapp.Entity.AnimalFactAPI;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
