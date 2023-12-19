@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         private void goToAnimalGeneratorActivity(String withAnimalKey) {
             Intent animalGeneratorIntent = new Intent(this, AnimalGenerator.class);
-            animalGeneratorIntent.putExtra(String.valueOf(AnimalKey.ANIMAL), withAnimalKey);
+            animalGeneratorIntent.putExtra(AnimalKey.ANIMAL.name(), withAnimalKey);
             startActivity(animalGeneratorIntent);
             finish();
         }

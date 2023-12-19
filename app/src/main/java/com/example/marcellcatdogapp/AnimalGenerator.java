@@ -78,6 +78,7 @@ public class AnimalGenerator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent triviaIntent = new Intent(AnimalGenerator.this, Trivia.class);
+                triviaIntent.putExtra(AnimalKey.ANIMAL.name(), currentAnimal);
                 startActivity(triviaIntent);
                 finish();
             }
