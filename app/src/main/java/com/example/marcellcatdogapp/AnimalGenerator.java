@@ -53,7 +53,7 @@ public class AnimalGenerator extends AppCompatActivity {
             generateCatImage();
             generateCatFact();
         } else if (currentAnimal.equals(AnimalKey.DOG.name())) {
-            generateDogImage();
+//            generateDogImage();
             generateDogFact();
         } else {
             // Assume default is to generate "Dog"
@@ -212,7 +212,7 @@ public class AnimalGenerator extends AppCompatActivity {
 //        Be careful, we're copying from cat...
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://dogapi.dog/api")
+                .baseUrl("https://dogapi.dog")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -221,13 +221,15 @@ public class AnimalGenerator extends AppCompatActivity {
         factCall.enqueue(new Callback<DogFact>() {
             @Override
             public void onResponse(Call<DogFact> call, Response<DogFact> response) {
-                if (response.isSuccessful() && response.body() != null) {
+                if (response.isSuccessful()) {
                     String text = response.body().getText();
-                    if (Pattern.matches(".*\\p{InCyrillic}.*", text)) {
-                        animalFactText.setText("Bro this is Russian");
-                    } else {
+
+
+
+
+
                         animalFactText.setText(text);
-                    }
+//                    }
                 }
             }
 
