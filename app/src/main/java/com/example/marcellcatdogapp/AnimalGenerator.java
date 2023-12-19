@@ -55,7 +55,7 @@ public class AnimalGenerator extends AppCompatActivity {
             generateCatImage();
             generateCatFact();
         } else if (currentAnimal.equals(AnimalKey.DOG.name())) {
-//            generateDogImage();
+            generateDogImage();
             generateDogFact();
         } else {
             // Assume default is to generate "Dog"
@@ -226,7 +226,7 @@ public class AnimalGenerator extends AppCompatActivity {
             public void onResponse(Call<DogFact> call, Response<DogFact> response) {
                 if (response.isSuccessful()) {
                     ArrayList<String> text = response.body().getText();
-                    String anotherText = response.message().toString();
+//                    String anotherText = response.message().toString();
 //                    String yetanothertext = response.raw().body().toString();
 //                    String againText = response.body().toString();
 //                    Log.e("RANDOM_FACT", text);

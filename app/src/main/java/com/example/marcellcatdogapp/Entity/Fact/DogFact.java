@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class DogFact implements AnimalFact {
 
+    // Kinduff API Serialization
     @SerializedName("facts")
     private ArrayList<String> facts;
 
@@ -23,3 +24,11 @@ public class DogFact implements AnimalFact {
     }
 
 }
+
+// dogapi.dog
+//    @SerializedName("body")
+//    private String text;
+//
+//    public String getText() {
+//        return this.text;
+//    }
