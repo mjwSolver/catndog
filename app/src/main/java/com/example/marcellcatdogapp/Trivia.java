@@ -226,7 +226,14 @@ public class Trivia extends AppCompatActivity {
             binding.answer3Button.setText(response3);
             binding.answer4Button.setText(response4);
 
+            String buttonColor = "#943A5E9B";
+            binding.answer1Button.setBackgroundColor(Color.parseColor(buttonColor));
+            binding.answer2Button.setBackgroundColor(Color.parseColor(buttonColor));
+            binding.answer3Button.setBackgroundColor(Color.parseColor(buttonColor));
+            binding.answer4Button.setBackgroundColor(Color.parseColor(buttonColor));
+
         } catch (JSONException e) {
+
             e.printStackTrace();
         }
 
