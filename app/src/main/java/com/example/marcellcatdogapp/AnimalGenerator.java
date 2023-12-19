@@ -2,6 +2,7 @@ package com.example.marcellcatdogapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +21,6 @@ import com.example.marcellcatdogapp.Entity.DogFactAPI;
 import com.example.marcellcatdogapp.Entity.DogImage;
 import com.example.marcellcatdogapp.Entity.DogImageAPI;
 import com.example.marcellcatdogapp.databinding.ActivityGeneratorBinding;
-import com.example.marcellcatdogapp.databinding.ActivityTriviaImgenerateBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -70,12 +70,21 @@ public class AnimalGenerator extends AppCompatActivity {
     private void loadListeners(){
 
         binding.nextFactButton.setOnClickListener(new View.OnClickListener() {
-                                                      @Override
-                                                      public void onClick(View v) {
-                                                          createNextFact();
-                                                      }
-                                                  }
+                  @Override
+                  public void onClick(View v) {
+                      createNextFact();
+                  }
+              }
         );
+
+        binding.goToTriviaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent triviaIntent = new Intent(AnimalGenerator.this, Trivia.class);
+                startActivity(triviaIntent);
+                finish();
+            }
+        });
 
     }
 
@@ -129,7 +138,7 @@ public class AnimalGenerator extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<CatImage>> call, Throwable t) {
-                System.out.println("failed");
+                System.out.println("Failed to Acquire Cat Image");
             }
         });
 
