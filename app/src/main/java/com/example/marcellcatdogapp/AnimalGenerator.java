@@ -3,6 +3,7 @@ package com.example.marcellcatdogapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,11 +63,19 @@ public class AnimalGenerator extends AppCompatActivity {
             generateDogFact();
         }
 
+        loadListeners();
+
     }
 
     private void loadListeners(){
 
-
+        binding.nextFactButton.setOnClickListener(new View.OnClickListener() {
+                                                      @Override
+                                                      public void onClick(View v) {
+                                                          createNextFact();
+                                                      }
+                                                  }
+        );
 
     }
 
