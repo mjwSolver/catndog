@@ -18,6 +18,8 @@ import com.example.marcellcatdogapp.Entity.DogFact;
 import com.example.marcellcatdogapp.Entity.DogFactAPI;
 import com.example.marcellcatdogapp.Entity.DogImage;
 import com.example.marcellcatdogapp.Entity.DogImageAPI;
+import com.example.marcellcatdogapp.databinding.ActivityGeneratorBinding;
+import com.example.marcellcatdogapp.databinding.ActivityTriviaImgenerateBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -32,11 +34,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AnimalGenerator extends AppCompatActivity {
 
     String currentAnimal;
+    ActivityGeneratorBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_generator);
+
+        binding = ActivityGeneratorBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         Bundle extras = getIntent().getExtras();
         currentAnimal = extras.getString(AnimalKey.ANIMAL.name());
@@ -59,24 +64,9 @@ public class AnimalGenerator extends AppCompatActivity {
 
     }
 
-    private void generateNewFactAndImage(){
+    private void loadListeners(){
 
-        if(currentAnimal == null){
-            Toast.makeText(
-                    AnimalGenerator.this,
-                    "Animal Undefined",
-                    Toast.LENGTH_SHORT
-            ).show();
-            return;
-        }
 
-        if(currentAnimal.equals(AnimalKey.CAT.name())){
-
-        }
-
-        if(currentAnimal.equals(AnimalKey.DOG.name())){
-
-        }
 
     }
 
@@ -95,34 +85,13 @@ public class AnimalGenerator extends AppCompatActivity {
 
     }
 
-    private void generateAnimalImage(){
+    private void createNextFact(){
 
-        // This is not working
-
-        if(!runCurrentAnimalChecker()){
-            return;
+        if (currentAnimal.equals(AnimalKey.CAT.name())) {
+            generateCatFact();
+        } else if (currentAnimal.equals(AnimalKey.DOG.name())) {
+            generateDogFact();
         }
-
-        String theBaseURL = "";
-
-        if(currentAnimal.equals(AnimalKey.CAT.name())){
-            theBaseURL = "https://api.thecatapi.com";
-
-        } else if(currentAnimal.equals(AnimalKey.DOG.name())){
-            theBaseURL = "https://api.thedogapi.com/";
-        }
-
-        ImageView animalImage = findViewById(R.id.animalImageView);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(theBaseURL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-//        Half done - you realized you'll need to reformat the entire interface and class structure.
-
-        AnimalImageAPI animalImageAPI = retrofit.create(AnimalImageAPI.class);
-        Call<List<CatImage>> call = animalImageAPI.getCatImageData();
-
 
     }
 
@@ -154,7 +123,6 @@ public class AnimalGenerator extends AppCompatActivity {
                 System.out.println("failed");
             }
         });
-
 
     }
 
