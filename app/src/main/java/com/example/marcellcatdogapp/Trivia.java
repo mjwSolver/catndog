@@ -62,7 +62,6 @@ public class Trivia extends AppCompatActivity {
                 responseToClick(binding.answer1Button);
             }
         });
-
         binding.answer2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +78,13 @@ public class Trivia extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 responseToClick(binding.answer4Button);
+            }
+        });
+        binding.loadNewTriviaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadNewTrivia();
+                loadTriviaImage();
             }
         });
 
