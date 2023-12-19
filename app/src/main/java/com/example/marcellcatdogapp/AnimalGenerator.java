@@ -9,17 +9,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.marcellcatdogapp.Entity.AnimalImage;
-import com.example.marcellcatdogapp.Entity.AnimalImageAPI;
 import com.example.marcellcatdogapp.Entity.AnimalKey;
-import com.example.marcellcatdogapp.Entity.CatFact;
-import com.example.marcellcatdogapp.Entity.CatFactAPI;
-import com.example.marcellcatdogapp.Entity.CatImage;
-import com.example.marcellcatdogapp.Entity.CatImageAPI;
-import com.example.marcellcatdogapp.Entity.DogFact;
-import com.example.marcellcatdogapp.Entity.DogFactAPI;
-import com.example.marcellcatdogapp.Entity.DogImage;
-import com.example.marcellcatdogapp.Entity.DogImageAPI;
+import com.example.marcellcatdogapp.Entity.Fact.CatFact;
+import com.example.marcellcatdogapp.Entity.Fact.CatFactAPI;
+import com.example.marcellcatdogapp.Entity.Image.CatImage;
+import com.example.marcellcatdogapp.Entity.Image.CatImageAPI;
+import com.example.marcellcatdogapp.Entity.Fact.DogFact;
+import com.example.marcellcatdogapp.Entity.Fact.DogFactAPI;
+import com.example.marcellcatdogapp.Entity.Image.DogImage;
+import com.example.marcellcatdogapp.Entity.Image.DogImageAPI;
 import com.example.marcellcatdogapp.databinding.ActivityGeneratorBinding;
 import com.squareup.picasso.Picasso;
 
@@ -70,12 +68,11 @@ public class AnimalGenerator extends AppCompatActivity {
     private void loadListeners(){
 
         binding.nextFactButton.setOnClickListener(new View.OnClickListener() {
-                  @Override
-                  public void onClick(View v) {
-                      createNextFact();
-                  }
-              }
-        );
+          @Override
+          public void onClick(View v) {
+              createNextFact();
+          }
+      });
 
         binding.goToTriviaButton.setOnClickListener(new View.OnClickListener() {
             @Override
