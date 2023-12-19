@@ -1,5 +1,6 @@
 package com.example.marcellcatdogapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,7 +47,8 @@ public class Trivia extends AppCompatActivity {
         binding = ActivityTriviaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        currentAnimal = AnimalKey.DOG.name();
+        Bundle extras = getIntent().getExtras();
+        currentAnimal = extras.getString(AnimalKey.ANIMAL.name());
 
         loadNewTrivia();
         loadTriviaImage();
@@ -87,6 +89,27 @@ public class Trivia extends AppCompatActivity {
                 loadTriviaImage();
             }
         });
+
+        binding.goBackToTriviaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent animalGeneratorIntent = new Intent(Trivia.this, AnimalGenerator.class);
+                animalGeneratorIntent.putExtra(AnimalKey.ANIMAL.name(), currentAnimal);
+                startActivity(animalGeneratorIntent);
+                finish();
+            }
+        });
+
+        binding.goBackToMainButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainMenuIntent = new Intent(Trivia.this, MainActivity.class);
+//                mainMenuIntent.putExtra(AnimalKey.ANIMAL.name(), currentAnimal);
+                startActivity(mainMenuIntent);
+                finish();
+            }
+        });
+
 
     }
 
