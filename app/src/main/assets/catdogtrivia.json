@@ -2,19 +2,19 @@
   "dog": [
     {
       "question": "What is Dog in Indonesian?",
-      "response1": "Kucing",
-      "response2": "Neko",
-      "response3": "Gato",
+      "response1": "Gǒu",
+      "response2": "Inu",
+      "response3": "Pero",
       "response4": "Anjing",
       "answerkey": "Anjing"
     },
     {
       "question": "What can't dogs eat?",
-      "response1": "Kucing",
-      "response2": "Neko",
-      "response3": "Gato",
-      "response4": "Anjing",
-      "answerkey": "Anjing"
+      "response1": "Beef",
+      "response2": "Chicken",
+      "response3": "Chocolate",
+      "response4": "Bread",
+      "answerkey": "Chocolate"
     }
   ], "cat": [
     {

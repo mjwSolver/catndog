@@ -10,7 +10,9 @@
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Template Question"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -28,43 +30,54 @@
         app:layout_constraintTop_toBottomOf="@+id/questionTextView"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/answerOneTextView"
+    <Button
+        android:id="@+id/answer1Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="68dp"
-        android:text="TextView"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="52dp"
+        android:text="Answer 1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/triviaImageView" />
 
-    <TextView
-        android:id="@+id/answerTwoTextView"
+    <Button
+        android:id="@+id/answer3Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="104dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="60dp"
+        android:text="Answer 3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer1Button" />
+
+    <Button
+        android:id="@+id/answer2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="52dp"
+        android:text="Answer 2"
+        app:layout_constraintStart_toEndOf="@+id/answer1Button"
         app:layout_constraintTop_toBottomOf="@+id/triviaImageView" />
 
-    <TextView
-        android:id="@+id/answerThreeTextView"
+    <Button
+        android:id="@+id/answer4Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="72dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerOneTextView" />
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="60dp"
+        android:text="Answer 4"
+        app:layout_constraintStart_toEndOf="@+id/answer3Button"
+        app:layout_constraintTop_toBottomOf="@+id/answer2Button" />
 
-    <TextView
-        android:id="@+id/answerFourTextView"
+    <Button
+        android:id="@+id/loadNewTriviaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="100dp"
-        android:text="TextView"
+        android:layout_marginTop="44dp"
+        android:text="Load New Trivia"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerTwoTextView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer4Button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
