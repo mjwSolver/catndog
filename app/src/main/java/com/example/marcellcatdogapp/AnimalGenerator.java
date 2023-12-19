@@ -104,7 +104,6 @@ public class AnimalGenerator extends AppCompatActivity {
         }
 
         String theBaseURL = "";
-        Class<AnimalImageAPI> futureAnimalImageAPI;
 
         if(currentAnimal.equals(AnimalKey.CAT.name())){
             theBaseURL = "https://api.thecatapi.com";
@@ -121,7 +120,8 @@ public class AnimalGenerator extends AppCompatActivity {
                 .build();
 //        Half done - you realized you'll need to reformat the entire interface and class structure.
 
-//        AnimalImageAPI animalImageAPI = retrofit.create()
+        AnimalImageAPI animalImageAPI = retrofit.create(AnimalImageAPI.class);
+        Call<List<CatImage>> call = animalImageAPI.getCatImageData();
 
 
     }
