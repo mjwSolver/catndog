@@ -1,0 +1,41 @@
+{
+  "dog": [
+    {
+      "question": "What is Dog in Indonesian?",
+      "response1": "Kucing",
+      "response2": "Neko",
+      "response3": "Gato",
+      "response4": "Anjing",
+      "answerkey": "Anjing"
+    },
+    {
+      "question": "What can't dogs eat?",
+      "response1": "Kucing",
+      "response2": "Neko",
+      "response3": "Gato",
+      "response4": "Anjing",
+      "answerkey": "Anjing"
+    }
+  ], "cat": [
+    {
+      "question": "What is Cat in Indonesian?",
+      "response1": "Kucing",
+      "response2": "Neko",
+      "response3": "Gato",
+      "response4": "māo",
+      "answerkey": "Kucing"
+    },
+    {
+      "question": "What food can't cats eat?",
+      "response1": "Fish",
+      "response2": "Beef",
+      "response3": "Chicken",
+      "response4": "Pepper",
+      "answerkey": "Pepper"
+    }
+  ]
+
+
+
+
+}
