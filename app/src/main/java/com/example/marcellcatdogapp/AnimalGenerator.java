@@ -78,6 +78,46 @@ public class AnimalGenerator extends AppCompatActivity {
 
     }
 
+
+    private boolean runCurrentAnimalChecker(){
+
+        if(currentAnimal == null){
+            Toast.makeText(
+                    AnimalGenerator.this,
+                    "Animal Undefined",
+                    Toast.LENGTH_SHORT
+            ).show();
+            return false;
+        }
+
+        return true;
+
+    }
+
+    private void generateAnimalFact(){
+
+        if(!runCurrentAnimalChecker()){
+            return;
+        }
+
+        String theBaseURL = "";
+
+        if(currentAnimal.equals(AnimalKey.CAT.name())){
+            theBaseURL = "https://api.thecatapi.com";
+
+        } else if(currentAnimal.equals(AnimalKey.DOG.name())){
+            theBaseURL = "https://api.thedogapi.com/";
+        }
+
+        ImageView animalImage = findViewById(R.id.animalImageView);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(theBaseURL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+//        Half done - you realized you'll need to reformat the entire interface and class structure.
+    }
+
     private void generateCatImage() {
 
         ImageView animalImage = findViewById(R.id.animalImageView);
