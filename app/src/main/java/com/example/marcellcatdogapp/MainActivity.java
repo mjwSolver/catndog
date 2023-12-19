@@ -22,52 +22,15 @@ public class MainActivity extends AppCompatActivity {
             catButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    goToAnimalGeneratorActivity(String.valueOf(AnimalKey.CAT));
+                    goToAnimalGeneratorActivity(AnimalKey.CAT.name());
                 }
             });
 
             dogButton.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v) {
-                    goToAnimalGeneratorActivity(String.valueOf(AnimalKey.DOG));
+                    goToAnimalGeneratorActivity(AnimalKey.DOG.name());
                 }
             });
-
-
-//            catButton.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent animalGeneratorIntent = new Intent(MainActivity.this, AnimalGenerator.class);
-//                    animalGeneratorIntent.putExtra("ANIMAL", "CAT");
-//                    startActivity(animalGeneratorIntent);
-//                    finish();
-//                }
-//            });
-
-//            dogButton.setOnClickListener(new View.OnClickListener(){
-//                public void onClick(View v) {
-//                    Intent animalGeneratorIntent = new Intent(MainActivity.this, AnimalGenerator.class);
-//                    animalGeneratorIntent.putExtra("ANIMAL", "DOG");
-//                    startActivity(animalGeneratorIntent);
-//                    finish();
-//                }
-//            });
-
-
-//        CardView catCardView = findViewById(R.id.catCardView);
-//        CardView dogCardView = findViewById(R.id.dogCardView);
-//
-//        catCardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                goToAnimalGeneratorActivity("CAT");
-//            }
-//        });
-//
-//        dogCardView.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v) {
-//                goToAnimalGeneratorActivity("DOG");
-//            }
-//        });
 
         }
 
